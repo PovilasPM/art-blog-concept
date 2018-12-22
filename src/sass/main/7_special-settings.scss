@@ -1,0 +1,10 @@
+// SPECIAL SETTINGS ------------------------------------------------------------------
+
+//NAVBAR POSITIONING ON THE MAIN PAGE;
+
+@media only screen and (min-width: 1030px) {
+    .navbar {
+        position: absolute;
+        z-index: 1;
+    }
+}

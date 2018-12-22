@@ -1,0 +1,122 @@
+
+ /*NAVBAR -------------------------------------------------------------------------------------*/
+
+  .navbar {
+    list-style-type: none;
+    padding: 3rem 10rem;
+    width: 100%;
+    margin: auto;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    padding: .8rem 2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.button {
+    border: solid black;
+    border-width: .01rem;
+}
+
+.link-container {
+    float: right;
+}
+
+.button:hover {
+    background-color: blue;
+    color: white;
+    border: none;
+}
+
+@media only screen and (max-width: 1030px) {
+    .navbar {
+        padding: 2rem;
+    }
+}
+
+@media only screen and (min-width: 630px) {
+    .toggle-button p {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    
+    .navbar {
+        padding: 1.5rem 1rem;
+    }
+    
+    .navbar div {
+        display: none;
+    }
+
+    .toggle-button p {
+        display: inline;
+    }
+
+    .toggle-button {
+        float: right; 
+        //careful with the floats, could mess-up the formating (floated elements behave differently);
+    }
+
+    .navbar a,
+    .toggle-button p {
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        color: black;
+    }
+}
+
+/* NAVBAR-MODAL ------------------------------------------------------*/
+
+.nav-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.modal-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal-flex ul {
+    list-style-type: none;
+}
+
+.modal-flex a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    padding: 1.3rem;
+}
+
+.modal-flex li {
+    padding: 1.3rem;
+}
+
+.close {
+    font-size: 3rem;
+    position: absolute;
+    right: 0;
+    padding: .5rem 2rem;
+    margin: 0rem 1rem; 
+    color: black;
+}
+
+       

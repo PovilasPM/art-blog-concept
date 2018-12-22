@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <title>ARTICLE TEXT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <style>
+
+        /* GENERAL STYLING ------------------------------------------------------------------------- */
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        p,
+        a,
+        h2 {
+            font-family: 'Inconsolata', monospace;
+        }
+
+        h1 {
+            font-family: 'Roboto Slab', serif;
+        }
+
+        h2,
+        h1 {
+            font-weight: lighter;
+        }
+
+        p {
+            font-size: 1.1rem; /*Kai mobilus "landscape" - šriftas išikraipo (p padidėja h2 sumažėja)*/
+
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        /* ARTICLE -------------------------------------------------------------------------------------*/
+
+
+        .article {
+            max-width: 850px;
+            margin: auto;
+            padding: 3rem 2rem;
+        }
+
+        .article .img {
+            float: left;
+            padding: 0rem 3rem 2rem 0rem;
+        }
+
+        h1 {
+            padding-bottom: 2rem;
+        }
+
+        h2 {
+            padding-bottom: 3rem;
+        }
+
+        @media only screen and (min-width: 750px) {
+            .img-small {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 750px) {
+            .img {
+                display: none;
+            }
+
+            .article {
+                padding: 3rem 1rem;
+            }
+
+            .img-small {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ARTICLE ------------------------------------------------------------------------------ -->
+
+    <div class="article">
+        <img class="img" src="images/img1.jpg">
+        <img class="img-small" src="images/imgsm1.jpg">
+        <div class="article-text">
+            <h1>Banksy</h1>
+            <h2>Banksy yra vienas iš kūrėjų, kurių darbai turi ne tik estetinę, bet ir moralę keliančią vertę. Tai kūriniai, kuriuos nėra sudėtinga suvokti, tačiau kurių žinutė yra stipri. Pati menininko asmenybė yra užslėpta su kojine ar kažkokiu vilnoniu siuviniu.</h2>
+            <p>Kažko tai per ilgai nešvinta šį pavasarį, o temsta vis dar per greitai. Palūžtam vienumoje ir vienumoje atsistojam, nes… keista, bet gyventi norisi ir toliau. O ar ir šiandien Tau vis dar  niekur niekada neprivaloma?
+            <br/><br/>….ir aš pykau, kaltinau Tave, dėl daug ko. O, galų gale, Tu elgeisi su manim tik taip, kaip aš Tau leidau elgtis. Parodei, kur sudėti visi mano rūbai ir paskutinį kartą pakartojai, kad manęs čia niekas niekada nelaikė. O aš tik ramiai sėdėjau ir klausiau. Kartojau sau tyliai: “o kaip kitaip atrodo meilė.
+            <br/><br/>Na, o dabar aš vėl princesė. Tik šiek tiek stipresnė.  Ir jau nebeskaudina Tavo gatvė. Ir ji vėl svetima. Ir tu vis svetimesnis. Nors mintis, kad nuo šiol gyvenimas atrodys tik taip, vis dar kažkokia nejauki.  Grįžtu namo, nusiaunu batus ir viskas čia jau taip seniai nebe mano. Pečius užgula nepakeliama vienuma ir todėl kalbuosi su vis pilnėjančia pelenine, kavos puoduku ir ant dugno nusėdusiais tirščiais, su tuoj pražysiančia orchidėja, o su tavimi - ne. O su Tavimi viskas jau iškalbėta. Ir viskas pasakyta buvo dar tada kai kalbėti net nebuvome pradėję. Gal dar ir galėčiau pasakyti tau, kad per tuos metus aš iš tiesų labai pavargau nuo Tavęs, ir kad šiandien pasiilgau šiek tiek, ir kad jau nebepykstu. Ir kad labai gerai atsimenu tą dieną, kai sustojom vienas kitą mylėti. O ji iš tiesų buvo labai senai. Bet tau įdomu niekada nebuvo. “Ir tau neturėtų rūpėti” -atsakytum.
+            <br/><br/>O naktimis paskambina vėlai,  ir kalbina mane apie harmoniją, pusiausvyrą ir turiningumą. Kalbėk, nepadėk ragelio, Tavęs klausyti galėčiau ištįsą naktį, bet pasibaigia sąskaita, pasibaigia mintys ir, galų galę, mes pasibaigę.
+            <br/><br/>Nemaniau, kad dar ko nors norėsiu, bet šiandien aš norėjau užsidėti aukštakulnius. Ir užsidėjau. Ir dar noriu pavasario. To klaikiai šaukiančio ir pjaustančio širdį. Ir pabūti nepriklausoma, nuo to ką tu pagalvosi ir ką tu padarysi.  Ir apskritai nuo nieko. Kas vakarą bučiuotis, o ryte palikti. Ir galų gale pražydus kaštonams įsimylėti dar didesnį nevykelį, ir pradėti dar vieną neskoningą melodramą pavadinimu “kuris stipresnis?”. Nes turbūt dėl to ir norisi gyventi.</p>
+        </div>
+    </div>
+</body>
+
+</html>

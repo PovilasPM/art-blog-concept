@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>RANDOM ART</title>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR ------------------------------------------------------------------------------------- -->
+
+    <ul class="navbar">
+        <li><a href="#">LOGO</a></li>
+        <li class="toggle-button">
+            <p class="fa fa-bars" onclick="openModal()"></p>
+        </li>
+        <div class="link-container">
+            <li><a href="#" class="button">Straipsniai</a></li>
+            <li><a href="#" class="button">Apie</a></li>
+            <li><a href="#">Paieška</a></li>
+        </div>
+    </ul>
+
+    <!-- MODAL -->
+
+    <div class="nav-modal" id=js-modal>
+            <p class="close" onclick="closeModal()">&times;</p>
+            <div class="modal-flex">
+                <ul>
+                    <li><a href="#">Straipsniai</a></li>
+                    <li><a href="#">Apie</a></li>
+                    <li><a href="#">Paieška</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

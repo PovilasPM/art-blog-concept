@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>RANDOM ART</title>
+    <style>
+        /* GENERAL STYLIZATION -------------------------------------------------------------------*/
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        p,
+        a {
+            font-family: 'Inconsolata', monospace;
+        }
+
+        h1 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: lighter;
+        }
+
+        /*NAVBAR -------------------------------------------------------------------------------------*/
+
+        .navbar {
+            list-style-type: none;
+            padding: 2rem 10rem;
+        }
+
+        .navbar li {
+            display: inline;
+        }
+
+        .navbar a {
+            padding: 2rem 2rem;
+            text-decoration: none;
+            font-size: 1em;
+            color: blue;
+            /*background-color: #FFEC70;*/
+        }
+
+        .toggle-container p {
+            color: blue;
+            padding: 0rem 2rem;
+        }
+
+        .link-container {
+            float: right;
+        }
+
+        @media only screen and (max-width: 1050px) {
+            .navbar {
+                padding: 2rem;
+            }
+        }
+
+        @media only screen and (min-width: 630px) {
+            .toggle-container p {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 630px) {
+            .navbar {
+                padding: 1rem 1rem;
+                font-size: 1.5rem;
+            }
+
+            .toggle-container p {
+                display: inline;
+            }
+
+            .navbar div {
+                display: none;
+            }
+
+            .toggle-container {
+                float: right;
+            }
+
+            .navbar a,
+            .toggle-container p {
+                padding: 1.5rem 2rem;
+            }
+        }
+
+        /* MODAL ------------------------------------------------------*/
+
+        .nav-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .modal-flex {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .modal-flex ul {
+            list-style-type: none;
+        }
+
+        .modal-flex a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: blue;
+            padding: 1.3rem;
+        }
+
+        .modal-flex li {
+            padding: 1.3rem;
+        }
+
+        .close {
+            font-size: 3rem;
+            position: absolute;
+            right: 0;
+            padding: 0rem 1rem;
+            color: blue;
+
+        }
+
+        /* CAROUSEL ------------------------------------------------------------------------------------ */
+
+        .card {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem 0rem;
+        }
+
+        .tekstas p .telstas a {
+            font-size: 1.1rem;
+        }
+
+        .tekstas {
+            padding: 2rem 1rem 0rem 1.5rem;
+            max-width: 600px;
+        }
+
+        .tekstas h1,
+        .tekstas p {
+            padding: 0rem 0rem 1rem 0rem;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            user-select: none;
+            align-self: center;
+            padding: 1rem 1.5rem;
+
+        }
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 2s;
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .2
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .2
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @media only screen and (min-width: 880px) {
+
+            .card .img-small {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 880px) {
+
+            .card {
+                flex-wrap: wrap;
+            }
+
+            .card .img-small {
+                width: 80%;
+                height: 80%;
+                max-width: 500px;
+            }
+
+            .card .img {
+                display: none;
+            }
+
+            .tekstas {
+                order: 1;
+                max-width: 750px;
+                padding: 1rem 1rem 0rem 1rem;
+            }
+
+            .prev,
+            .next {
+                padding: 1rem 0.3rem;
+            }
+        }
+
+        /* GALLERY ---------------------------------------------------------------------------------*/
+
+        .gallery-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem 0rem;
+        }
+
+        .gallery-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .gallery-flex>h1,
+        .gallery-flex>a {
+            width: 100%;
+            padding: 1rem 1.5rem;
+        }
+
+        .gallery-flex>a {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .gallery-card {
+            max-width: 310px;
+            margin: 2rem 1.5rem;
+        }
+
+        .gallery-card>img {
+            width: 310px;
+        }
+
+        .gallery-card>h2 {
+            padding-top: .3rem;
+        }
+
+        .gallery-card>p {
+            padding-top: 0.5rem;
+        }
+
+        .gallery-card a {
+            background-color: #FFEC70;
+        }
+
+        @media only screen and (max-width: 1120px) {
+            .gallery-flex {
+                max-width: 850px;
+                margin: auto;
+            }
+
+            .gallery-flex>h1 {
+                text-align: center;
+            }
+        }
+
+        /*ABOUT --------------------------------------------------------------------------------------*/
+
+        .about {
+            max-width: 550px;
+            margin: auto;
+            padding: 2rem .5rem;
+        }
+
+        .about h1 {
+            padding-bottom: 1rem;
+        }
+
+        /* FOOTER ------------------------------------------------------------------------------------ */
+
+        li {
+            font-family: 'Inconsolata', monospace;
+        }
+
+        .footer {
+            list-style-type: none;
+            padding: 2rem 10rem;
+        }
+
+        .footer li,
+        .footer .links {
+            display: inline;
+        }
+
+        .footer .links {
+            float: right;
+        }
+
+        .links a {
+            padding: 1rem;
+        }
+
+        @media only screen and (max-width: 1050px) {
+            .footer {
+                padding: 2rem;
+            }
+        }
+
+        @media only screen and (max-width: 630px) {
+            .footer {
+                padding: 1rem 1rem;
+            }
+
+            .footer li,
+            .footer .links {
+                display: block;
+                float: none;
+                text-align: center;
+            }
+
+            .footer li {
+                padding: .5rem 0rem;
+            }
+
+            .links a {
+                padding: .7rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR ------------------------------------------------------------------------------------- -->
+
+    <ul class="navbar">
+        <li><a href="#">LOGO</a></li>
+        <li class="toggle-container">
+            <p class="fa fa-bars" onclick="openModal()"></p>
+        </li>
+        <div class="link-container">
+            <li><a href="#">Straipsniai</a></li>
+            <li><a href="#">Apie</a></li>
+            <li><a href="#">Paieška</a></li>
+        </div>
+    </ul>
+
+    <!-- MODAL -->
+
+    <div class="nav-modal" id=js-modal>
+        <p class="close" onclick="closeModal()">&times;</p>
+        <div class="modal-flex">
+            <ul>
+                <li><a href="#">Straipsniai</a></li>
+                <li><a href="#">Apie</a></li>
+                <li><a href="#">Paieška</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CAROUSEL----------------------------------------------------------------------------- -->
+
+    <div class=card-container>
+        <div class="card fade">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <img class="img" src="images/img1.jpg">
+            <img class="img-small" src="images/imgsm1.jpg">
+            <div class="tekstas">
+                <h1>Banksy</h1>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos. Tos, kurios atminty sukasi taip gerai
+                    pažįstamas sūrus kraujo skonis. Kuri puikiai žino, koks jausmas rankose gniaužti šaltą metalinį
+                    ginklą. Koks keistas stiprybės jausmas apima paleidus iš jo kulką. Tos, kurios nuodėmės nebūtų
+                    tilpę į storiausių kada nors žmogaus rašytų romanų puslapius. Pasiilgstu jos - visada
+                    apsišarvavusios dešimtimis skydų, kad joks jos pusėn paleistas šaudmuo niekada negaletų padaryti
+                    jokios žalos. Kad niekas negalėtų net pasvajoti prisikasti iki jos sielos ir ją sužeisti.</p>
+                <a href="#">Pilnas straipsnis</a>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <div class=card-container>
+        <div class="card fade">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <img class="img" src="images/img2.jpg">
+            <img class="img-small" src="images/imgsm2.jpg">
+            <div class="tekstas">
+                <h1>John Trocky</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore natus tenetur neque quasi
+                    sapiente dolore. Nobis suscipit debitis amet, molestias laborum, facere nihil, dolor similique
+                    reprehenderit tempore quod omnis? Doloribus! Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Dignissimos accusamus corrupti exercitationem, hic dolores magni ab repudiandae libero
+                    reiciendis atque? Tenetur officia consequuntur architecto assumenda a asperiores iste quam impedit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, doloribus? Quam dolore illum ad
+                    repudiandae incidunt dolorem assumenda magni possimus reprehenderit, eveniet aliquid perferendis
+                    ratione alias, eius maiores autem iusto.
+                </p>
+                <a href="#">Pilnas straipsnis</a>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card fade">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <img class="img" src="images/img3.jpg">
+            <img class="img-small" src="images/imgsm3.jpg">
+            <div class="tekstas">
+                <h1>Ivan Dostojevskyj</h1>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos. Tos, kurios atminty sukasi taip gerai
+                    pažįstamas sūrus kraujo skonis. Kuri puikiai žino, Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Odio, beatae! Voluptatem, quo facere. Tenetur voluptas esse nostrum nulla, vero
+                    reiciendis quia illum blanditiis laudantium explicabo porro quasi, delectus aliquid sunt.</p>
+                <a href="#">Pilnas straipsnis</a>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <!-- GALERY--------------------------------------------------------------------------------- -->
+
+    <div class="gallery-container">
+        <div class="gallery-flex">
+            <h1>Kiti kūrėjai</h1>
+            <div class="gallery-card">
+                <img src="images/imgsm1.jpg">
+                <h2>Banksy</h2>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokime bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų.<a href="#">...</a></p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="images/imgsm2.jpg">
+                <h2>Banksy</h2>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="images/imgsm3.jpg">
+                <h2>Banksy</h2>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="images/imgsm2.jpg">
+                <h2>Banksy</h2>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="images/imgsm1.jpg">
+                <h2>Banksy</h2>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+            </div>
+
+            <div class="gallery-card">
+                <img src="images/imgsm3.jpg">
+                <h2>Banksy</h2>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+            </div>
+            <a href="#">Archyvas</a>
+        </div>
+    </div>
+
+    <!-- ABOUT ------------------------------------------------------------------------------------- -->
+
+    <div class="about">
+        <h1>Apie blogą</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed placeat sequi porro dolorem nulla
+            voluptates. Quo ipsum possimus blanditiis fuga, officia repudiandae eum natus atque maxime reiciendis Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Eius reprehenderit cumque, suscipit laboriosam iusto
+            sequi soluta libero doloribus cum vitae repellendus dolore obcaecati, deserunt laborum officiis quidem
+            recusandae aspernatur sint. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, quia! Inventore
+            a veniam saepe porro non, dicta illum explicabo laboriosam recusandae blanditiis nihil optio, totam
+            doloremque. Voluptate rerum vel possimus! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Cupiditate possimus, quis eos ratione fugiat illum repellendus adipisci ab nobis voluptatem eum eaque
+            suscipit atque repellat! Dolor rerum natus sit cumque?</p>
+    </div>
+
+    <!-- FOOTER ------------------------------------------------------------------------------- -->
+
+    <ul class="footer">
+        <li>jonasjonaitis@gmail.com</li>
+        <div class="links">
+            <li><a href="#">Straipsniai</a></li>
+            <li><a href="#">Apie</a></li>
+        </div>
+    </ul>
+
+    <script>
+
+        // OPEN AND CLOSE MODAL -------------------------------------------------------------------------
+
+        // Open the Modal
+        function openModal() {
+            document.getElementById("js-modal").style.display = "block";
+        }
+
+        // Close the Modal
+        function closeModal() {
+            document.getElementById('js-modal').style.display = "none";
+        }
+
+        // CAROUSEL  --------------------------------------------------------------------------------------
+
+        var slideIndex = 1;
+        showSlide(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            var i;
+            var slides = document.getElementsByClassName("card-container");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>

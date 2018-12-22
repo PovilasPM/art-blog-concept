@@ -1,0 +1,185 @@
+
+        /* GALLERY -------------------------------------------------------------------------------------*/
+
+        .galerija {
+            width: 80%;
+            margin: auto;
+            padding: .5rem 0rem 2rem 2rem;
+        }
+
+        .row {
+            display: flex;
+            width: 80%;
+            margin: auto;
+            justify-content: center;
+        }
+
+        .column {
+            flex-basis: 33.33%;
+            // Equal carousel columns that sit next to each other;
+        }
+
+        .image-container {
+            display: flex;
+            position: relative;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .column .picture {
+            border-radius: 4px;
+            padding: 5px;
+            width: 100%;
+            //BORDER STYLING;
+            border-style: solid;
+            border-width: 8px;
+            border-image-source: url(images/border4.svg);
+            border-image-slice: 50%;
+            border-image-width: 40px;
+        }
+
+        .magnifier-container {
+            position: absolute;
+            /*Setting the positions (left/top..) with ABSOLUTE is necessary, because some browsers are not forgiving and mess-up the alignment otherwise*/
+            left: 0; 
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.61);
+            opacity: 0;
+        }
+
+        .magnifier {
+            width: 20%;
+        }
+
+         .magnifier-container:hover {
+            opacity: 1;
+        } 
+
+        @media only screen and (max-width: 1030px) {
+            .image-container {
+                padding:.5rem;
+            }
+        }
+
+        @media only screen and (max-width: 850px) {
+            .column .picture {
+                padding: 0;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .galerija {
+                width: 100%;
+                padding: 0rem 0rem 2rem 1rem;
+            }
+            .row {
+                width: 100%;
+            }
+            
+        }
+
+        @media only screen and (max-width: 630px) {
+            .row {
+                padding-bottom: 2rem;
+            }
+        }
+
+         @media only screen and (max-width: 500px) {
+            
+            .column {
+                padding: 0rem 0rem;
+            }
+
+            .row {
+                flex-wrap: wrap;
+            }
+
+            .column {
+                flex-basis: 100%;
+            }
+
+            .column .picture {
+                border: none;
+                padding: 0rem .3rem .7rem .3rem;;
+            }
+            .image-container {
+                padding: 0rem 0rem;
+            }
+        } 
+
+        /* GALLERY MODAL VIEW ------------------------------------------------------------------------------ */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .modal-content {
+            display: flex;
+            margin: auto;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slides {
+            display: none;
+            width: 60vw;
+            max-height: 100vh;
+        }
+
+        .flex-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slides img {
+            max-width: 60vw;
+            max-height: 95vh;
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 1rem;   
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .prev {
+            padding: 1rem 2rem 1rem 1rem;
+        }
+
+        .next {
+            padding: 1rem 1rem 1rem 2rem;
+        }
+
+        

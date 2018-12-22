@@ -1,0 +1,19 @@
+
+/*ABOUT --------------------------------------------------------------------------------------*/
+
+.about {
+    max-width: 550px;
+    margin: auto;
+    padding: 4rem .5rem 3rem .5rem;
+}
+
+.about h1 {
+    padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 760px) {
+    .about {
+        padding: 1rem 1rem 2rem 1rem;
+    }
+}
+

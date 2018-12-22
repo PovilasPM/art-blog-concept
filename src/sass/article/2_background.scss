@@ -1,0 +1,71 @@
+
+        /* BACKGROUND STUFF ------------------------------------------------------------------------ */
+        
+        .background {
+            position: fixed;
+            z-index: -1;
+        }
+
+        .random,
+        .art {
+            color: #FFF4AF;
+        }
+
+        .random {
+            font-size: 11rem;
+            top: 12rem;
+            left: -11rem;
+            text-decoration-line: underline;
+            transform: rotate(90deg);
+
+        }
+
+        .art {
+            font-size: 19rem;
+            bottom: 3rem;
+            right: -10rem;
+            transform: rotate(-90deg);
+        }
+
+        .R,
+.A {
+    display: none;
+}
+
+        @media only screen and (max-width: 1040px) {
+            .random {
+                font-size: 10rem;
+                left: -11.5rem;
+                top: 14rem;
+                text-decoration-line: none;
+            }
+            .art {
+                font-size: 14rem;
+                right: -8rem;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .random,
+            .art {
+                display: none;
+            }
+            .R,
+    .A {
+        display: block;
+        color: #FFF4AF;
+    }
+
+    .R {
+        font-size: 20rem;
+        transform: rotate(180deg);
+        top: -13rem;
+        left: -2rem;
+    }
+
+    .A {
+        font-size: 30rem;
+        bottom: -9rem;
+        right: -7rem;
+    }
+        }

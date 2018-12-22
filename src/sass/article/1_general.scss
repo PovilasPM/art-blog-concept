@@ -1,0 +1,51 @@
+
+/* GENERAL STYLIZATION -------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+p,
+a {
+    font-family: 'Inconsolata', monospace;
+}
+
+h1,
+h2 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: lighter;
+}
+
+/* LINK STYLING ----------------------------------------------------------------------- */
+
+.link {
+    color: black;
+}
+
+.link:hover {
+    color: white;
+    background-color: blue;
+}
+
+// MOBILE ----------------------------------------
+// For the mobile browsers not to mess up my font size ------
+
+body, 
+html {
+    -ms-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+
+@media only screen and (max-width: 760px) {
+    p {
+        font-size: 1.2rem;
+    } 
+    .link {
+        font-size: 1.2rem;
+    }
+}

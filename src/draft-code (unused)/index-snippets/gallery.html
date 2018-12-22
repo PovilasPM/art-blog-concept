@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<title>GALLERY</title>
+	<style>
+		/* GENERAL STILISATION -------------------------------------------------------------------*/
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		p,
+		a {
+			font-family: 'Inconsolata', monospace;
+		}
+
+		h1,
+		h2 {
+			font-family: 'Roboto Slab', serif;
+			font-weight: lighter;
+		}
+
+		/* GALLERY ---------------------------------------------------------------------------------*/
+
+		.gallery-container {
+			max-width: 1100px;
+			margin: auto;
+			padding: 2rem 0rem;
+		}
+
+		.gallery-flex {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
+		.gallery-flex>h1,
+		.gallery-flex>a {
+			width: 100%;
+			padding: 1rem 1.5rem;
+		}
+
+		.gallery-flex>a {
+			text-align: center;
+			font-size: 1.2rem;
+		}
+
+		.gallery-card {
+			max-width: 310px;
+			margin: 2rem 1.5rem;
+		}
+
+		.gallery-card>img {
+			width: 310px;
+		}
+
+		.gallery-card>h2 {
+			padding-top: .3rem;
+		}
+
+		.gallery-card>p {
+			padding-top: 0.5rem;
+		}
+
+		.gallery-card a {
+			background-color: #FFEC70;
+		}
+
+		@media only screen and (max-width: 1120px) {
+			.gallery-flex {
+				max-width: 850px;
+				margin: auto;
+			}
+
+			.gallery-flex>h1 {
+				text-align: center;
+			}
+		}
+
+		</style>
+</head>
+
+<body>
+
+	<!-- GALERY--------------------------------------------------------------------------------- -->
+
+	<div class="gallery-container">
+		<div class="gallery-flex">
+			<h1>Kiti kūrėjai</h1>
+			<div class="gallery-card">
+				<img src="images/imgsm1.jpg">
+				<h2>Banksy</h2>
+				<p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+					kokime bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+					kuri lėtai išnyksta už pilkų cigarečių dūmų.<a href="#">...</a></p>
+			</div>
+
+			<div class="gallery-card">
+				<img src="images/imgsm2.jpg">
+				<h2>Banksy</h2>
+				<p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+					kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+					kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+			</div>
+
+			<div class="gallery-card">
+				<img src="images/imgsm3.jpg">
+				<h2>Banksy</h2>
+				<p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+					kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+					kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+			</div>
+
+			<div class="gallery-card">
+				<img src="images/imgsm2.jpg">
+				<h2>Banksy</h2>
+				<p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+					kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+					kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+			</div>
+
+			<div class="gallery-card">
+				<img src="images/imgsm1.jpg">
+				<h2>Banksy</h2>
+				<p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+					kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+					kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+			</div>
+
+			<div class="gallery-card">
+				<img src="images/imgsm3.jpg">
+				<h2>Banksy</h2>
+				<p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+					kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+					kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos.<a href="#">...</a></p>
+			</div>
+			<a href="#">Archyvas</a>
+		</div>
+	</div>
+
+</body>
+
+</html>

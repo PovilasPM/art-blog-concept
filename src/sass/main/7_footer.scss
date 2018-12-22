@@ -1,0 +1,54 @@
+
+/* FOOTER ------------------------------------------------------------------------------------ */
+
+li {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.2rem;
+}
+
+.footer {
+    list-style-type: none;
+    padding: 3rem 10rem;
+}
+
+.footer li,
+.footer .links {
+    display: inline;
+}
+
+.footer .links {
+    float: right;
+}
+
+.links a {
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 1050px) {
+    .footer {
+        padding: 2rem;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .footer {
+        padding: 1rem 1rem;
+        border-top: solid black;
+        border-width: .15rem;
+    }
+
+    .footer li,
+    .footer .links {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+
+    .footer li {
+        padding: .5rem 0rem;
+    }
+
+    .links a {
+        padding: .7rem 1rem;
+    }
+}

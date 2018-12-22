@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <title>GALLERY WITH MODAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <style>
+
+        /* GENERAL STYLING ------------------------------------------------------------------------- */
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        p,
+        a,
+        h2 {
+            font-family: 'Inconsolata', monospace;
+        }
+
+        h1 {
+            font-family: 'Roboto Slab', serif;
+        }
+
+        h2,
+        h1 {
+            font-weight: lighter;
+        }
+
+        p {
+            font-size: 1.1rem;
+            /*Kai mobilus "landscape" - šriftas išikraipo (p padidėja h2 sumažėja)*/
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        /* GALLERY -------------------------------------------------------------------------------------*/
+
+        .row {
+            display: flex;
+            padding: 0 .5rem;
+            max-width: 800px;
+            margin: auto;
+            justify-content: center;
+        }
+
+        /* Create equal columns that sit next to each other */
+        .column {
+            flex-basis: 33.33%;
+            padding: 0rem .5rem;
+        }
+
+        .column img {
+            margin: .2rem 0rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 100%;
+        }
+
+        .column img:hover {
+            opacity: .5;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .row {
+                padding: 0 1rem;
+            }
+
+            .column {
+                padding: 0rem .05rem;
+            }
+
+            .column img {
+                margin: 0rem 0rem;
+            }
+
+            .row {
+                flex-wrap: wrap;
+            }
+
+            .column {
+                flex-basis: 100%;
+            }
+
+        }
+
+        /* GALLERY VIEW ------------------------------------------------------------------------------ */
+
+        /* The Modal (background) */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+
+        }
+
+        /* Modal Content */
+        .modal-content {
+            display: flex;
+            margin: auto;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hide the slides by default */
+        .slides {
+            display: none;
+            width: 60vw;
+            max-height: 100vh;
+        }
+
+        .flex-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slides img {
+            max-width: 60vw;
+            max-height: 95vh;
+        }
+
+        /* The Close Button */
+        /* Problem - the icon hides behind scrollbar */
+        .close {
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0rem .5rem;
+            margin: 1rem 2rem 0rem 0rem;
+        }
+
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .prev {
+            padding: 1rem 2rem 1rem 1rem;
+        }
+
+        .next {
+            padding: 1rem 1rem 1rem 2rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- GALLERY-------------------------------------------------------------------------- -->
+
+    <div class="row">
+        <div class="column">
+            <img src="images/banksy1.jpg" onclick="openModal();currentSlide(1)">
+            <img src="images/banksy2.jpg" onclick="openModal();currentSlide(2)">
+            <img src="images/banksy3.jpg" onclick="openModal();currentSlide(3)">
+        </div>
+        <div class="column">
+            <img src="images/banksy4.jpg" onclick="openModal();currentSlide(4)">
+            <img src="images/banksy5.jpg" onclick="openModal();currentSlide(5)">
+            <img src="images/banksy6.jpg" onclick="openModal();currentSlide(6)">
+        </div>
+        <div class="column">
+            <img src="images/banksy7.jpg" onclick="openModal();currentSlide(7)">
+            <img src="images/banksy8.jpg" onclick="openModal();currentSlide(8)">
+            <img src="images/banksy9.jpg" onclick="openModal();currentSlide(9)">
+        </div>
+    </div>
+
+    <!-- GALLERY VIEW ------------------------------------------------------------------------ -->
+
+    <div id="modal-js" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div class="modal-content">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy1.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy2.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy3.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy4.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy5.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy6.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy7.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy8.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy9.jpg">
+                </div>
+            </div>
+
+
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <script>
+
+        //MODAL-JS (ALL CODE FOR MODAL AND GALLERY) --------------------------------------------------- 
+
+        // Open the Modal
+        function openModal() {
+            document.getElementById('modal-js').style.display = "block";
+        }
+
+        // Close the Modal
+        function closeModal() {
+            document.getElementById('modal-js').style.display = "none";
+        }
+
+        //Initial value and function call;  
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>

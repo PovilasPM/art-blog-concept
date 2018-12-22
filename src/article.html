@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ARTICLE</title>
+    <link rel="stylesheet" href="css/article.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND STUFF ------------------------------------------------------------------------ -->
+
+    <p class="background random">Random</p>
+    <p class="background art">Art</p>
+
+    <!-- MOBILE -->
+    <p class="background R">R</p>
+    <p class="background A">A</p>
+
+    <!-- NAVBAR ------------------------------------------------------------------------------------- -->
+
+    <ul class="navbar">
+        <li><a href="index.html">LOGO</a></li>
+        <li class="toggle-button">
+            <p class="fa fa-bars" onclick="menuModal()"></p>
+        </li>
+        <div class="link-container">
+            <li><a href="#" class="button">Straipsniai</a></li>
+            <li><a href="#" class="button">Apie</a></li>
+            <li><a href="#">Paieška</a></li>
+        </div>
+    </ul>
+
+    <!-- NAVBAR MODAL -->
+
+    <div class="nav-modal" id=js-modal>
+        <p class="close-menu" onclick="menuClose()">&times;</p>
+        <div class="modal-flex">
+            <ul>
+                <li><a href="#">Straipsniai</a></li>
+                <li><a href="#">Apie</a></li>
+                <li><a href="#">Paieška</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ARTICLE ------------------------------------------------------------------------------ -->
+
+    <div class="article animated fadeInDown">
+        <div class="img-container">
+            <img class="img" src="images/banksy-cover.jpg">
+        </div>
+        <div class="article-text">
+            <h1>Banksy</h1>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae aut facere omnis ipsum maiores
+                consequuntur odio voluptatem explicabo sit repellat est molestiae inventore veritatis tenetur sed
+                quibusdam alias, dolore vel cupiditate ut sapiente commodi voluptates.</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates magnam voluptatem, totam aut quas,
+                assumenda placeat sint dignissimos culpa quibusdam molestiae quae officiis asperiores? Veritatis, iure.
+                Itaque laudantium odio reiciendis eaque esse commodi illo ducimus earum cumque ullam nulla voluptas
+                sapiente quas eum libero deleniti tempora, aliquam nisi autem obcaecati, neque ab! Veniam fuga cumque
+                sequi molestias, porro neque voluptatem enim ducimus pariatur nam, officia accusantium mollitia amet
+                illo facilis at doloribus minus culpa architecto id aliquid sed. Aliquid maxime ducimus magnam, iusto
+                tempore alias fugit et, nemo, eius error obcaecati commodi culpa minus velit. Nostrum beatae animi nemo
+                libero ipsam amet
+                </br></br> voluptatem sed excepturi odit recusandae, qui quod ipsum obcaecati corporis veniam deserunt!
+                Deserunt reiciendis veniam cumque exercitationem quo, minima suscipit possimus cum distinctio, et esse
+                repellendus quas eligendi nulla. Velit voluptatem odio unde! Corrupti, optio inventore, porro fugiat
+                animi accusamus alias nobis iure saepe necessitatibus, doloremque tempore ducimus dolores unde?
+                Commodi, voluptatem ex minus odit quasi voluptates veritatis, iure vitae qui mollitia sapiente
+                doloribus? Iure dolor labore, est vel iste nostrum deserunt sint neque laudantium? Dolor corrupti
+                labore perferendis recusandae maiores facilis laboriosam tenetur accusamus eos sit corporis distinctio
+                et iusto repellat deleniti
+                </br></br>dignissimos velit expedita, voluptate sint ut. Autem harum expedita cupiditate, eum, dolor
+                tempore non voluptatibus laudantium voluptatum iste pariatur, ad voluptate quam accusantium nihil nemo
+                porro! Inventore aperiam reprehenderit ipsa voluptatibus, a cum repudiandae autem esse illum ipsam
+                vitae quas molestias eligendi tempora sapiente dolor obcaecati nulla corporis modi quos commodi
+                voluptate. Consequatur, laudantium repellat. Beatae iure, itaque quia in rem earum eaque quidem laborum
+                eum officiis neque, similique delectus veniam consectetur et harum, deleniti tempora? Sapiente ad
+                cupiditate quo quia iure dolore voluptatum corporis doloribus perspiciatis blanditiis? Ad,
+                necessitatibus. Deserunt aut quos aliquam, voluptas eveniet cumque facere quisquam optio voluptate
+                repellat debitis incidunt delectus officia quo commodi voluptates libero dolores rem amet. Tempora
+                voluptas iure doloribus distinctio nesciunt perspiciatis aut delectus, nam alias aspernatur. Vero
+                asperiores earum quis dignissimos odit ratione!</p>
+        </div>
+    </div>
+
+    <!-- GALLERY-------------------------------------------------------------------------- -->
+
+    <h1 class="galerija">Galerija</h1>
+    <div class="row">
+        <div class="column">
+            <div class="image-container">
+                <img class="picture" src="images/banksy1.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(1)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="picture" src="images/banksy2.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(2)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="picture" src="images/banksy3.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(3)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="image-container">
+                <img class="picture" src="images/banksy4.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(4)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="picture" src="images/banksy5.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(5)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="picture" src="images/banksy6.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(6)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="image-container">
+                <img class="picture" src="images/banksy7.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(7)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="picture" src="images/banksy8.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(8)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="picture" src="images/banksy9.jpg">
+                <div class="magnifier-container" onclick="openModal();currentSlide(9)">
+                    <img class="magnifier" src="images/magnifier.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  MODAL - GALLERY VIEW ------------------------------------------------------------------------ -->
+
+    <div id="modal-js" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div class="modal-content">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy1.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy2.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy3.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy4.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy5.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy6.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy7.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy8.jpg">
+                </div>
+            </div>
+            <div class="slides">
+                <div class="flex-img">
+                    <img src="images/banksy9.jpg">
+                </div>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <!-- FOOTER ------------------------------------------------------------------------------- -->
+
+    <ul class="footer">
+        <li>jonasjonaitis@gmail.com</li>
+        <div class="links">
+            <li><a href="#" class="link">Straipsniai</a></li>
+            <li><a href="#" class="link">Apie</a></li>
+        </div>
+    </ul>
+
+    <!-- JS REFFERENCE  -->
+    <script src="js/article.js"></script>
+</body>
+
+</html>

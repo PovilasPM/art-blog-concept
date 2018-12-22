@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <title>CAROUSEL</title>
+    <style>
+        /* GENERAL STYLIZATION -------------------------------------------------------------------*/
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        p,
+        a {
+            font-family: 'Inconsolata', monospace;
+        }
+
+        h1 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 1;
+        }
+
+        /* CAROUSEL ------------------------------------------------------------------------------------ */
+
+        .card {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem 0rem;
+        }
+
+        .tekstas p .telstas a {
+            font-size: 1.1rem;
+        }
+
+        .tekstas {
+            padding: 2rem 1rem 0rem 1.5rem;
+            max-width: 600px;
+        }
+
+        .tekstas h1,
+        .tekstas p {
+            padding: 0rem 0rem 1rem 0rem;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            user-select: none;
+            align-self: center;
+            padding: 1rem 1.5rem;
+
+        }
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 2s;
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .2
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .2
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @media only screen and (min-width: 880px) {
+
+            .card .img-small {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 880px) {
+
+            .card {
+                flex-wrap: wrap;
+            }
+
+            .card .img-small {
+                width: 80%;
+                height: 80%;
+                max-width: 500px;
+            }
+
+            .card .img {
+                display: none;
+            }
+
+            .tekstas {
+                order: 1;
+                max-width: 750px;
+                padding: 1rem 1rem 0rem 1rem;
+            }
+
+            .prev,
+            .next {
+                padding: 1rem 0.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CAROUSEL----------------------------------------------------------------------------- -->
+    
+    <div class=card-container>
+        <div class="card fade">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <img class="img" src="images/img1.jpg">
+            <img class="img-small" src="images/imgsm1.jpg">
+            <div class="tekstas">
+                <h1>Banksy</h1>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos. Tos, kurios atminty sukasi taip gerai
+                    pažįstamas sūrus kraujo skonis. Kuri puikiai žino, koks jausmas rankose gniaužti šaltą metalinį
+                    ginklą. Koks keistas stiprybės jausmas apima paleidus iš jo kulką. Tos, kurios nuodėmės nebūtų
+                    tilpę į storiausių kada nors žmogaus rašytų romanų puslapius. Pasiilgstu jos - visada
+                    apsišarvavusios dešimtimis skydų, kad joks jos pusėn paleistas šaudmuo niekada negaletų padaryti
+                    jokios žalos. Kad niekas negalėtų net pasvajoti prisikasti iki jos sielos ir ją sužeisti.</p>
+                <a href="#">Pilnas straipsnis</a>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <div class=card-container>
+        <div class="card fade">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <img class="img" src="images/img2.jpg">
+            <img class="img-small" src="images/imgsm2.jpg">
+            <div class="tekstas">
+                <h1>John Trocky</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore natus tenetur neque quasi
+                    sapiente dolore. Nobis suscipit debitis amet, molestias laborum, facere nihil, dolor similique
+                    reprehenderit tempore quod omnis? Doloribus! Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Dignissimos accusamus corrupti exercitationem, hic dolores magni ab repudiandae libero
+                    reiciendis atque? Tenetur officia consequuntur architecto assumenda a asperiores iste quam impedit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, doloribus? Quam dolore illum ad
+                    repudiandae incidunt dolorem assumenda magni possimus reprehenderit, eveniet aliquid perferendis
+                    ratione alias, eius maiores autem iusto.
+                </p>
+                <a href="#">Pilnas straipsnis</a>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="card fade">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <img class="img" src="images/img3.jpg">
+            <img class="img-small" src="images/imgsm3.jpg">
+            <div class="tekstas">
+                <h1>Ivan Dostojevskyj</h1>
+                <p>Pasiilgstu jos. Tos, kuri bet kuriomis savaitės dienomis atsiduria bet
+                    kokiame bet kurio miesto kabake ir prie tamsiai dažytų lūpų kilnoją sunkų alaus bokalą. Tos,
+                    kuri lėtai išnyksta už pilkų cigarečių dūmų uždangos. Tos, kurios atminty sukasi taip gerai
+                    pažįstamas sūrus kraujo skonis. Kuri puikiai žino, Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Odio, beatae! Voluptatem, quo facere. Tenetur voluptas esse nostrum nulla, vero
+                    reiciendis quia illum blanditiis laudantium explicabo porro quasi, delectus aliquid sunt.</p>
+                <a href="#">Pilnas straipsnis</a>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    var slideIndex = 1; //Iniatial value; 
+    showSlide(slideIndex); //Run the function;
+    
+    // Next/previous controls;
+    function plusSlides(n) {
+        showSlide(slideIndex += n);
+    }
+
+    function showSlide(n) {
+        var i; //i is declared for a loop (loop seems to work without variable declaration);
+        var slides = document.getElementsByClassName("card-container"); // 3;
+        if (n > slides.length) { slideIndex = 1 } // Goes back to the initial slide - when last one is reached (going forward);
+        if (n < 1) { slideIndex = slides.length } // Goes to the last slide - when the first one is reached (going backwards);
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        } //for loop - basically hides every slide giving "display - none" to every slide with the help of loop, then other piece of code makes certain slide visible;
+        slides[slideIndex - 1].style.display = "block"; //Dispays a certain slide, or in fancy terms certain item from the array (or list); 
+    }
+    
+</script>
+
+</html>

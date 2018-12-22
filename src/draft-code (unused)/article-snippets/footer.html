@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <title>FOOTER</title>
+    <style>
+        /* GENERAL STYLIZATION -------------------------------------------------------------------*/
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        p,
+        a {
+            font-family: 'Inconsolata', monospace;
+        }
+
+        h1 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 1;
+        }
+
+        /* FOOTER ------------------------------------------------------------------------------------ */
+
+        li {
+            font-family: 'Inconsolata', monospace;
+        }
+
+        .footer {
+            list-style-type: none;
+            padding: 2rem 10rem;
+        }
+
+        .footer li,
+        .footer .links {
+            display: inline;
+        }
+
+        .footer .links {
+            float: right;
+        }
+
+        .links a {
+            padding: 1rem;
+        }
+
+        @media only screen and (max-width: 1050px) {
+            .footer {
+                padding: 2rem;
+            }
+        }
+
+        @media only screen and (max-width: 630px) {
+            .footer {
+                padding: 1rem 1rem;
+            }
+
+            .footer li,
+            .footer .links {
+                display: block;
+                float: none;
+                text-align: center;
+            }
+
+            .footer li {
+                padding: .5rem 0rem;
+            }
+
+            .links a {
+                padding: .7rem 1rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- FOOTER ------------------------------------------------------------------------------- -->
+
+    <ul class="footer">
+        <li>jonasjonaitis@gmail.com</li>
+        <div class="links">
+            <li><a href="#">Straipsniai</a></li>
+            <li><a href="#">Apie</a></li>
+        </div>
+    </ul>
+
+</body>
+
+</html>

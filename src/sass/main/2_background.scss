@@ -1,0 +1,68 @@
+ 
+ /* BACKGROUND STUFF ------------------------------------------------------------------------ */
+ 
+.background {
+    position: fixed;
+    z-index: -1;
+}
+
+.random,
+.art {
+    color: #FFF4AF;
+}
+
+.random {
+    font-size: 15rem;
+    top: -.5rem;
+    left: -3rem;
+    text-decoration-line: underline;
+}
+
+.art {
+    font-size: 30rem;
+    bottom: -6rem;
+    right: -7rem;
+}
+
+.R,
+.A {
+    display: none;
+}
+
+@media only screen and (max-height: 850px) {
+    .random {
+        top: -3.5rem;
+        left: -1rem;
+        text-decoration-line: none;
+    }
+    .art {
+        bottom: -10rem;
+        right: -7rem;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .random,
+    .art {
+        display: none;
+    }
+
+    .R,
+    .A {
+        display: block;
+        color: #FFF4AF;
+    }
+
+    .R {
+        font-size: 20rem;
+        transform: rotate(180deg);
+        top: -9rem;
+        left: -2rem;
+    }
+
+    .A {
+        font-size: 30rem;
+        bottom: -9rem;
+        right: -7rem;
+    }
+}
